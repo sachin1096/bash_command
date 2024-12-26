@@ -16,6 +16,7 @@ with open('syslog.log') as file:
         # regex search
         # * Sample Line of log file
         # "May 27 11:45:40 ubuntu.local ticky: INFO: Created ticket [#1234] (username)"
+
         match = re.search(
             r"ticky: ([\w+]*):? ([\w' ]*)[\[[#0-9]*\]?]? ?\((.*)\)$", line)
         code, error_msg, user = match.group(1), match.group(2), match.group(3)
